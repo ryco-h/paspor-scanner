@@ -3074,8 +3074,10 @@ namespace HLNonBlockingExample.NET
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main(string[] args)
+        static void Main()
         {
+            string[] args = new string[] { "neviimmrzreader:http://host.docker.internal:9030/alokasi-paspor/dokim/cancel-reallocate/&http://host.docker.internal:9030/alokasi-paspor/dokim/exchange/&http://host.docker.internal:9030/alokasi-paspor/dokim/reallocate/&http://host.docker.internal:9030/alokasi-paspor/dokim/save-reallocation/&http://host.docker.internal:9030/alokasi-paspor/dokim/fail-test/&http://host.docker.internal:9030/alokasi-paspor/dokim/success-test/&http://host.docker.internal:9030/alokasi-paspor/dokim/set-status/&http://host.docker.internal:9091/notify&http://host.docker.internal:9030/auth-api/alur-mundur/login&http://host.docker.internal:9030/pengecekan-mrtd/pengecekan-dpri/adddoc&http://host.docker.internal:9030/pengecekan-mrtd/pengecekan-dpri/update-userid&MUHAMMAD_SOBIRIN&5539000000014862&17-01-1991&C5726112&7ea90a6f-a85a-4bf1-a761-a77a6c1f16cf&a54e7589-553c-4e24-baed-a9642df969ce&43e07f6d-e3a2-4138-bfe6-652b3bdb056d&eyJhbGciOiJIUzI1NiJ9.eyJ3b3JrX3VuaXQiOnsiaWQiOiIyN0FBIiwiaWRTYXR1YW5LZXJqYSI6IjI3QUEiLCJuYW1hU2F0dWFuS2VyamEiOiJLSlJJIEpPSE9SIEJBSFJVIiwiZGVza3JpcHNpU2F0dWFuS2VyamEiOiJLSlJJIEpPSE9SIEJBSFJVIiwiYWxhbWF0IjoiTm8uNDYsIEphbGFuIFRhYXQsIDgwMTAwIEpvaG9yIEJhaHJ1IiwidGVsZXBvbiI6Iis2MDcgLSAyMjcgNDE4OC8yMjEzMjQzIiwiZmF4IjoiKzYwNy0yMjEgMzI0NiIsInN0cnVrdHVyU2F0dWFuS2VyamEiOm51bGwsImluZHVrU2F0dWFuS2VyamEiOm51bGwsImtvZGVVbml0IjoiMjdBQSIsImtvZGVDYWJhbmciOiI1NTMiLCJhY3RpdmUiOnRydWV9LCJyb2xlIjoiU1VQRVIiLCJuYW1lIjoiU3VwZXIiLCJpZCI6IjQzZTA3ZjZkLWUzYTItNDEzOC1iZmU2LTY1MmIzYmRiMDU2ZCIsImV4cCI6MTU4OTIyMzQ4MSwidXNlcm5hbWUiOiIxMjM0NSIsIm9uT2ZmIjp0cnVlfQ.YbNttOZjl-r7hLO2jBVBkjdZfXhnF8swVqWtKA1BFvs&AKTIF&TERCETAK&BIASA" };
+
             string strneviimmrzreader = "neviimmrzreader:";
             if (args.Length == 1 && args[0].Contains("neviimmrzreader:") && args[0].Length > (strneviimmrzreader).Length)
             {

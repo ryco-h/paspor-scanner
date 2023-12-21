@@ -304,7 +304,7 @@ namespace HLNonBlockingExample.NET
         private string oldStatus;
         private string oldStatusDetail;
         private string tipe;
-        private Button btnClose;
+        private Button btnClose1;
         private Button btnEdit;
 
         private bool isCloseFromEdit = false;
@@ -343,6 +343,8 @@ namespace HLNonBlockingExample.NET
         private string namaLengkap;
         private string tanggalLahir;
         DataModel data;
+        private Button btnClose;
+        private Button button2;
 
         // Helper control to get around .NET 2.0 threadsafe control problem
         private Control _threadHelperControl;
@@ -756,9 +758,11 @@ namespace HLNonBlockingExample.NET
             this.label88 = new System.Windows.Forms.Label();
             this.groupBox12 = new System.Windows.Forms.GroupBox();
             this.btnEdit = new System.Windows.Forms.Button();
-            this.btnClose = new System.Windows.Forms.Button();
+            this.btnClose1 = new System.Windows.Forms.Button();
             this.label99 = new System.Windows.Forms.Label();
             this.rtbLog = new System.Windows.Forms.RichTextBox();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.StatePanel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TimePanel)).BeginInit();
             this.TimingsTab.SuspendLayout();
@@ -1007,6 +1011,7 @@ namespace HLNonBlockingExample.NET
             this.Data});
             this.TimingsList.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TimingsList.FullRowSelect = true;
+            this.TimingsList.HideSelection = false;
             this.TimingsList.Location = new System.Drawing.Point(20, 20);
             this.TimingsList.Name = "TimingsList";
             this.TimingsList.Size = new System.Drawing.Size(1314, 452);
@@ -1161,6 +1166,7 @@ namespace HLNonBlockingExample.NET
             this.dataFileList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2});
+            this.dataFileList.HideSelection = false;
             this.dataFileList.Location = new System.Drawing.Point(1188, 9);
             this.dataFileList.Name = "dataFileList";
             this.dataFileList.Size = new System.Drawing.Size(55, 20);
@@ -1184,6 +1190,7 @@ namespace HLNonBlockingExample.NET
             this.validatedList.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.dataItem,
             this.validated});
+            this.validatedList.HideSelection = false;
             this.validatedList.Location = new System.Drawing.Point(327, 253);
             this.validatedList.Name = "validatedList";
             this.validatedList.Size = new System.Drawing.Size(310, 222);
@@ -1512,7 +1519,7 @@ namespace HLNonBlockingExample.NET
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.Controls.Add(this.gbPassport);
             this.flowLayoutPanel1.Controls.Add(this.gbEPassport);
@@ -1904,7 +1911,7 @@ namespace HLNonBlockingExample.NET
             // 
             // tabControl
             // 
-            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.ImagesTab);
             this.tabControl.Controls.Add(this.tabPage1);
@@ -2221,6 +2228,7 @@ namespace HLNonBlockingExample.NET
             this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader3,
             this.columnHeader4});
+            this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(400, 240);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(360, 152);
@@ -2243,6 +2251,7 @@ namespace HLNonBlockingExample.NET
             this.listView2.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader5,
             this.columnHeader6});
+            this.listView2.HideSelection = false;
             this.listView2.Location = new System.Drawing.Point(400, 24);
             this.listView2.Name = "listView2";
             this.listView2.Size = new System.Drawing.Size(360, 200);
@@ -2583,6 +2592,7 @@ namespace HLNonBlockingExample.NET
             this.columnHeader10});
             this.listView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.listView3.FullRowSelect = true;
+            this.listView3.HideSelection = false;
             this.listView3.Location = new System.Drawing.Point(20, 20);
             this.listView3.Name = "listView3";
             this.listView3.Size = new System.Drawing.Size(766, 367);
@@ -2934,7 +2944,7 @@ namespace HLNonBlockingExample.NET
             // groupBox12
             // 
             this.groupBox12.Controls.Add(this.btnEdit);
-            this.groupBox12.Controls.Add(this.btnClose);
+            this.groupBox12.Controls.Add(this.btnClose1);
             this.groupBox12.Controls.Add(this.label99);
             this.groupBox12.Controls.Add(this.rtbLog);
             this.groupBox12.Controls.Add(this.btnSerahkan);
@@ -2958,15 +2968,15 @@ namespace HLNonBlockingExample.NET
             this.btnEdit.UseVisualStyleBackColor = true;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // btnClose
+            // btnClose1
             // 
-            this.btnClose.Location = new System.Drawing.Point(274, 62);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(80, 35);
-            this.btnClose.TabIndex = 51;
-            this.btnClose.Text = "Tutup";
-            this.btnClose.UseVisualStyleBackColor = true;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            this.btnClose1.Location = new System.Drawing.Point(274, 62);
+            this.btnClose1.Name = "btnClose1";
+            this.btnClose1.Size = new System.Drawing.Size(80, 35);
+            this.btnClose1.TabIndex = 51;
+            this.btnClose1.Text = "Tutup";
+            this.btnClose1.UseVisualStyleBackColor = true;
+            this.btnClose1.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label99
             // 
@@ -2987,11 +2997,33 @@ namespace HLNonBlockingExample.NET
             this.rtbLog.TabIndex = 49;
             this.rtbLog.Text = "";
             // 
+            // btnClose
+            // 
+            this.btnClose.Location = new System.Drawing.Point(669, 655);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(133, 35);
+            this.btnClose.TabIndex = 53;
+            this.btnClose.Text = "Tutup Aplikasi";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click_1);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(543, 655);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 35);
+            this.button2.TabIndex = 53;
+            this.button2.Text = "Hapus Data";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleBaseSize = new System.Drawing.Size(5, 13);
             this.ClientSize = new System.Drawing.Size(1370, 728);
             this.ControlBox = false;
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.groupBox12);
             this.Controls.Add(this.groupBox11);
             this.Controls.Add(this.statusBar);
@@ -5058,7 +5090,7 @@ namespace HLNonBlockingExample.NET
 
             if (result == DialogResult.Yes)
             {
-                this.Close();
+                Environment.Exit(0);
             }
         }
 
@@ -5192,6 +5224,33 @@ namespace HLNonBlockingExample.NET
                 {
                     Console.WriteLine($"Failed to send message to a client: {ex.Message}");
                 }
+            }
+        }
+
+        private void btnClose_Click_1(object sender, EventArgs e)
+        {
+            DialogResult result = MessageBox.Show("Apakah anda yakin ingin menutup aplikasi Uji Kualitas?", "Warning", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes)
+            {
+                Environment.Exit(0);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Hapus();
+        }
+
+        public void Hapus()
+        {
+            try
+            {
+                Console.WriteLine("ini hapus");
+            }
+            catch (Exception)
+            {
+
             }
         }
     }

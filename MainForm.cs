@@ -2911,6 +2911,7 @@ namespace HLNonBlockingExample.NET
             this.btnSerahkan.TabIndex = 48;
             this.btnSerahkan.Text = "Serahkan Passport";
             this.btnSerahkan.UseVisualStyleBackColor = true;
+            this.btnSerahkan.Visible = false;
             this.btnSerahkan.Click += new System.EventHandler(this.btnSerahkan_Click);
             // 
             // btnCetakUlang
@@ -2922,6 +2923,7 @@ namespace HLNonBlockingExample.NET
             this.btnCetakUlang.TabIndex = 47;
             this.btnCetakUlang.Text = "Cetak Ulang";
             this.btnCetakUlang.UseVisualStyleBackColor = true;
+            this.btnCetakUlang.Visible = false;
             this.btnCetakUlang.Click += new System.EventHandler(this.btnCetakUlang_Click);
             // 
             // tbHasilUji
@@ -2966,6 +2968,7 @@ namespace HLNonBlockingExample.NET
             this.btnEdit.TabIndex = 52;
             this.btnEdit.Text = "Edit";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Visible = false;
             this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // btnClose1
@@ -2976,6 +2979,7 @@ namespace HLNonBlockingExample.NET
             this.btnClose1.TabIndex = 51;
             this.btnClose1.Text = "Tutup";
             this.btnClose1.UseVisualStyleBackColor = true;
+            this.btnClose1.Visible = false;
             this.btnClose1.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label99
@@ -5246,7 +5250,22 @@ namespace HLNonBlockingExample.NET
         {
             try
             {
-                Console.WriteLine("ini hapus");
+                DialogResult result = MessageBox.Show("Apakah anda yakin ingin menghapus data?", "Warning", MessageBoxButtons.YesNo);
+
+                if (result == DialogResult.Yes)
+                {
+                    namaPemohon = "";
+                    noPermohonan = "";
+                    tglLahir = "";
+                    noPassport = "";
+                    tbNamaPemohon.Text = "";
+                    tbNoPermohonan.Text = "";
+                    tbNamaPemohon.Text = "";
+                    tbTglLahir.Text = "";
+                    tbNoPassport.Text = "";
+                }
+               
+
             }
             catch (Exception)
             {

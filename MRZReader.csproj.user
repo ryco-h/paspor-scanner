@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <InstallUrlHistory />
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <StartWorkingDirectory>C:\Program Files %28x86%29\3M\3M Page Reader\3.3.7.7\Bin\</StartWorkingDirectory>
+    <RemoteDebugEnabled>false</RemoteDebugEnabled>
+    <StartArguments>neviimmrzreader:http://host.docker.internal:9030/alokasi-paspor/dokim/cancel-reallocate/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/exchange/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/reallocate/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/save-reallocation/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/fail-test/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/success-test/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/set-status/&amp;http://host.docker.internal:9091/notify&amp;http://host.docker.internal:9030/auth-api/alur-mundur/login&amp;http://host.docker.internal:9030/pengecekan-mrtd/pengecekan-dpri/adddoc&amp;http://host.docker.internal:9030/pengecekan-mrtd/pengecekan-dpri/update-userid&amp;KRISMAN_OPPUSUNGGU&amp;1049000000150277&amp;26-12-1972&amp;X959663&amp;ccc02c74-482e-4191-a744-78df3c41a70d&amp;02a5d254-c526-446f-b6a7-22a8af371cee&amp;7b956483-fa35-11e9-aba3-02004c4f4f50&amp;eyJhbGciOiJIUzI1NiJ9.eyJ3b3JrX3VuaXQiOnsiaWQiOiJKRSIsImlkU2F0dWFuS2VyamEiOiIxMDkxNTUiLCJuYW1hU2F0dWFuS2VyamEiOiJKQUtBUlRBIFNFTEFUQU4iLCJkZXNrcmlwc2lTYXR1YW5LZXJqYSI6IkthbnRvciBJbWlncmFzaSBLZWxhcyBJIEtodXN1cyBKYWthcnRhIFNlbGF0YW4iLCJhbGFtYXQiOiJKTC4gV0FSVU5HIEJVTkNJVCBSQVlBIE5PLjIwNyBSVC9SVy4wMDEvMDAxIEtFTC5EVVJFTiBUSUdBLCBLRUMuUEFOQ09SQU4sIEpBS0FSVEEgU0VMQVRBTiwgREtJIEpBS0FSVEEsMTI3NjAiLCJ0ZWxlcG9uIjoiKDAyMSk3OTE3MDkxMiwgNzkxNzA5MTAiLCJmYXgiOiIoMDIxKS03OTE3MDkwNyw3OTE3MDkxMCIsInN0cnVrdHVyU2F0dWFuS2VyamEiOm51bGwsImluZHVrU2F0dWFuS2VyamEiOm51bGwsImtvZGVVbml0IjoiSkUiLCJrb2RlQ2FiYW5nIjoiMTA0IiwiYWN0aXZlIjp0cnVlfSwicm9sZSI6IlNVUEVSIiwibmFtZSI6IktTTyBQZW5nZW1iYW5nYW4iLCJpZCI6IjdiOTU2NDgzLWZhMzUtMTFlOS1hYmEzLTAyMDA0YzRmNGY1MCIsImV4cCI6MTU3OTk1NzYxNywidXNlcm5hbWUiOiIwNDAwOTk5OTgiLCJvbk9mZiI6dHJ1ZX0.DelbqiAXntLFn6oYPWfdhG4GGMGtwHDjELy1SpgVmlM&amp;AKTIF&amp;TERCETAK&amp;ELEKTRONIK</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <StartWorkingDirectory>C:\Program Files %28x86%29\3M\3M Page Reader\3.3.2.7\Bin\</StartWorkingDirectory>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <StartArguments>neviimmrzreader:http://host.docker.internal:9030/alokasi-paspor/dokim/cancel-reallocate/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/exchange/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/reallocate/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/save-reallocation/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/fail-test/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/success-test/&amp;http://host.docker.internal:9030/alokasi-paspor/dokim/set-status/&amp;http://host.docker.internal:9091/notify&amp;http://host.docker.internal:9030/auth-api/alur-mundur/login&amp;http://host.docker.internal:9030/pengecekan-mrtd/pengecekan-dpri/adddoc&amp;http://host.docker.internal:9030/pengecekan-mrtd/pengecekan-dpri/update-userid&amp;MUHAMMAD_SOBIRIN&amp;5539000000014862&amp;17-01-1991&amp;C5726112&amp;7ea90a6f-a85a-4bf1-a761-a77a6c1f16cf&amp;a54e7589-553c-4e24-baed-a9642df969ce&amp;43e07f6d-e3a2-4138-bfe6-652b3bdb056d&amp;eyJhbGciOiJIUzI1NiJ9.eyJ3b3JrX3VuaXQiOnsiaWQiOiIyN0FBIiwiaWRTYXR1YW5LZXJqYSI6IjI3QUEiLCJuYW1hU2F0dWFuS2VyamEiOiJLSlJJIEpPSE9SIEJBSFJVIiwiZGVza3JpcHNpU2F0dWFuS2VyamEiOiJLSlJJIEpPSE9SIEJBSFJVIiwiYWxhbWF0IjoiTm8uNDYsIEphbGFuIFRhYXQsIDgwMTAwIEpvaG9yIEJhaHJ1IiwidGVsZXBvbiI6Iis2MDcgLSAyMjcgNDE4OC8yMjEzMjQzIiwiZmF4IjoiKzYwNy0yMjEgMzI0NiIsInN0cnVrdHVyU2F0dWFuS2VyamEiOm51bGwsImluZHVrU2F0dWFuS2VyamEiOm51bGwsImtvZGVVbml0IjoiMjdBQSIsImtvZGVDYWJhbmciOiI1NTMiLCJhY3RpdmUiOnRydWV9LCJyb2xlIjoiU1VQRVIiLCJuYW1lIjoiU3VwZXIiLCJpZCI6IjQzZTA3ZjZkLWUzYTItNDEzOC1iZmU2LTY1MmIzYmRiMDU2ZCIsImV4cCI6MTU4OTIyMzQ4MSwidXNlcm5hbWUiOiIxMjM0NSIsIm9uT2ZmIjp0cnVlfQ.YbNttOZjl-r7hLO2jBVBkjdZfXhnF8swVqWtKA1BFvs&amp;AKTIF&amp;TERCETAK&amp;BIASA</StartArguments>
+  </PropertyGroup>
+</Project>

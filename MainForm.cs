@@ -24,6 +24,7 @@ using System.Text.Json;
 using System.Net.NetworkInformation;
 using MMM.Readers;
 using System.Buffers.Text;
+using System.Collections.Generic;
 
 
 namespace HLNonBlockingExample.NET
@@ -337,6 +338,10 @@ namespace HLNonBlockingExample.NET
         private string CAstatus;
         private string TAstatus;
         private string SACstatus;
+        private string DOC_Signer;
+        private string base64Finger1;
+        private string base64Finger2;
+        private string ChipId;
 
         private string nomorPermohonan;
         private string nomorPaspor;
@@ -3478,9 +3483,19 @@ namespace HLNonBlockingExample.NET
                                         if (counter > 1)
                                         {
                                             pbFinger2.Image = new Bitmap(streamBuffer);
+
                                             string combinedPath = Path.Combine(tempPath, "finger2.jpg");
                                             SaveImagetoTemp(pbFinger2.Image, combinedPath);
                                             lblFinger2Type.Text = LocalizeFingerName(image.puFingerPosition);
+
+                                            Image img = pbFinger2.Image;
+                                            using (MemoryStream memoryStream = new MemoryStream())
+                                            {
+                                                img.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                                                byte[] byteBuffer = memoryStream.ToArray();
+                                                string base64String = Convert.ToBase64String(byteBuffer);
+                                                base64Finger2 = base64String;
+                                            }
                                         }
                                         else
                                         {
@@ -3490,6 +3505,15 @@ namespace HLNonBlockingExample.NET
                                             lblFinger1Type.Text = LocalizeFingerName(image.puFingerPosition);
                                             ListViewItem thisItem = validatedList.Items.Add("CD_SCDG3_VALIDATE");
                                             thisItem.SubItems.Add("RFID_VC_VALID");
+
+                                            Image img = pbFinger1.Image;
+                                            using (MemoryStream memoryStream = new MemoryStream())
+                                            {
+                                                img.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                                                byte[] byteBuffer = memoryStream.ToArray();
+                                                string base64String = Convert.ToBase64String(byteBuffer);
+                                                base64Finger1 = base64String;
+                                            }
                                         }
                                         counter++;
                                     }
@@ -3516,6 +3540,15 @@ namespace HLNonBlockingExample.NET
                                                     string combinedPath = Path.Combine(tempPath, "finger2.jpg");
                                                     SaveImagetoTemp(pbFinger2.Image, combinedPath);
                                                     lblFinger2Type.Text = LocalizeFingerName(image.puFingerPosition);
+
+                                                    Image img = pbFinger2.Image;
+                                                    using (MemoryStream memoryStream = new MemoryStream())
+                                                    {
+                                                        img.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                                                        byte[] byteBuffer = memoryStream.ToArray();
+                                                        string base64String = Convert.ToBase64String(byteBuffer);
+                                                        base64Finger2 = base64String;
+                                                    }
                                                 }
                                                 else
                                                 {
@@ -3525,6 +3558,15 @@ namespace HLNonBlockingExample.NET
                                                     lblFinger1Type.Text = LocalizeFingerName(image.puFingerPosition);
                                                     ListViewItem thisItem = validatedList.Items.Add("CD_SCDG3_VALIDATE");
                                                     thisItem.SubItems.Add("RFID_VC_VALID");
+
+                                                    Image img = pbFinger1.Image;
+                                                    using (MemoryStream memoryStream = new MemoryStream())
+                                                    {
+                                                        img.Save(memoryStream, System.Drawing.Imaging.ImageFormat.Png);
+                                                        byte[] byteBuffer = memoryStream.ToArray();
+                                                        string base64String = Convert.ToBase64String(byteBuffer);
+                                                        base64Finger1 = base64String;
+                                                    }
                                                 }
                                                 counter++;
                                             }
@@ -3541,7 +3583,10 @@ namespace HLNonBlockingExample.NET
                             }
                         case MMM.Readers.FullPage.DataType.CD_SCCHIPID:
                             {
+                                String text = aData as string;
+                                Console.WriteLine("Chip", text);
                                 lblChipId.Text = aData as string;
+                                ChipId = aData as string;
                                 break;
                             }
                         case MMM.Readers.FullPage.DataType.CD_SCDG1_VALIDATE:
@@ -3569,10 +3614,12 @@ namespace HLNonBlockingExample.NET
                                 MMM.Readers.Modules.RF.ValidationCode lValidationResult = (MMM.Readers.Modules.RF.ValidationCode)aData;
                                 validationResult = lValidationResult.ToString();
                                 thisItem.SubItems.Add(lValidationResult.ToString());
+                                DOC_Signer = lValidationResult.ToString();
                                 break;
                             }
                         case MMM.Readers.FullPage.DataType.CD_ACTIVE_AUTHENTICATION:
                             {
+                                // AA Status #Quality
                                 ListViewItem thisItem = validatedList.Items.Add(aDataType.ToString());
 
                                 MMM.Readers.Modules.RF.TriState lState = (MMM.Readers.Modules.RF.TriState)aData;
@@ -3626,6 +3673,7 @@ namespace HLNonBlockingExample.NET
                                 }
                                 thisItem.SubItems.Add(lState.ToString());
                                 this.lblPAStatus.Text = lState.ToString();
+                                PAstatus = lState.ToString();
 
                                 setLblColor(this.lblPAStatus);
                                 break;
@@ -3641,6 +3689,7 @@ namespace HLNonBlockingExample.NET
                                 }
                                 thisItem.SubItems.Add(lState.ToString());
                                 this.lblTAStatus.Text = lState.ToString();
+                                TAstatus = lState.ToString();
                                 setLblColor(this.lblTAStatus);
                                 break;
                             }
@@ -3655,6 +3704,7 @@ namespace HLNonBlockingExample.NET
                                 }
                                 thisItem.SubItems.Add(lState.ToString());
                                 this.lblCAStatus.Text = lState.ToString();
+                                CAstatus = lState.ToString();
                                 setLblColor(this.lblCAStatus);
                                 break;
                             }
@@ -4120,18 +4170,41 @@ namespace HLNonBlockingExample.NET
                                 docNumber = docNumber,
                                 docType = docType,
                                 resultState = resultState,
-                                resultStateDetail = resultStateDetail,
-                                AAstatus = AAstatus,
-                                PAstatus = PAstatus,
-                                CAstatus = CAstatus,
-                                TAstatus = TAstatus,
-                                SACstatus = SACstatus
+                                resultStateDetail = resultStateDetail
                             };
 
-                            var dataToSend = new {
-                                scan_foto = scan_foto,
-                                scan_data = scan_data
-                            };
+                            var dataToSend = new Dictionary<string, object>();
+
+                            if (isEpaspor)
+                            {
+                                var scan_epaspor = new
+                                {
+                                    AAstatus = AAstatus,
+                                    PAstatus = PAstatus,
+                                    CAstatus = CAstatus,
+                                    TAstatus = TAstatus,
+                                    SACstatus = SACstatus,
+                                    DOC_Signer = DOC_Signer,
+                                    base64Finger1 = base64Finger1,
+                                    base64Finger2 = base64Finger2,
+                                    ChipId = ChipId
+                                };
+
+                                dataToSend = new Dictionary<string, object>
+                                {
+                                    { "scan_foto", scan_foto },
+                                    { "scan_data", scan_data },
+                                    { "scan_epaspor", scan_epaspor }
+                                };
+                            }
+                            else
+                            {
+                                dataToSend = new Dictionary<string, object>
+                                {
+                                    { "scan_foto", scan_foto },
+                                    { "scan_data", scan_data }
+                                };
+                            }
 
                             var jsonData = JsonSerializer.Serialize(dataToSend);
 
